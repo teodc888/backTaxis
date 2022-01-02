@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
    },
-   total:{
+   neto:{
         type: DataTypes.INTEGER,
         allowNull: false,
    },
@@ -34,9 +34,8 @@ module.exports = (sequelize) => {
     gastosExtra:{
         type: DataTypes.STRING,
     },
-    totalGastos:{
-        type: DataTypes.INTEGER,
-
+    total: {
+        type: DataTypes.STRING,
     }
 
   },

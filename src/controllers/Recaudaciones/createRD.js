@@ -1,15 +1,15 @@
 const {Recaudaciones, Choferes} = require("../../db.js");
 async function createRD(req, res, next) {
-    const {dia,total,montoChofer,gnc,kilometros,gastosExtra,totalGastos,idchofer} = req.body;
+    const {dia,neto,gnc,kilometros,montoChofer,gastosExtra,idchofer} = req.body;
     try{
         const newRecaudacion = await Recaudaciones.create({
             dia,
-            total,
-            montoChofer,
+            neto,
             gnc,
             kilometros,
             gastosExtra,
-            totalGastos,
+            montoChofer: neto * 0.35,
+            total:neto - (neto * 0.35) - gnc  - gastosExtra ,
         });
 
         let dbChoferes = await Choferes.findAll({where:{id: idchofer}});

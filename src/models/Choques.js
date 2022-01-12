@@ -23,6 +23,28 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
 
     },
+    poliza:{
+        type: DataTypes.STRING,
+    },
+    nombre:{
+        type: DataTypes.STRING,
+    },
+    apellido:{
+        type: DataTypes.STRING,
+    },
+    dni:{
+        type: DataTypes.STRING,
+    },
+    telefono:{
+        type: DataTypes.STRING,
+    },
+    placa:{
+        type: DataTypes.STRING,
+    },
+    marca:{
+        type: DataTypes.STRING,
+    },
+
   },
   {
     createdAt: false,

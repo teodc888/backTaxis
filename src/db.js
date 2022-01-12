@@ -60,7 +60,7 @@ const { Choferes, Choques, Recaudaciones } = sequelize.models;
 // Product.hasMany(Reviews);
 
 Choferes.belongsToMany(Choques, {through: 'choferes_choques' });
-Choques.belongsTo(Choferes);
+Choques.belongsToMany(Choferes, {through: 'choferes_choques' });
 
 Choferes.belongsToMany(Recaudaciones, {through: 'choferes_recaudaciones' });
 Recaudaciones.belongsToMany(Choferes, {through: 'choferes_recaudaciones' });

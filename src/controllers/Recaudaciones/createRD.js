@@ -14,7 +14,8 @@ async function createRD(req, res, next) {
 
         let dbChoferes = await Choferes.findAll({where:{id: idchofer}});
 
-        if(dbChoferes){
+
+        if(dbChoferes.length > 0){
         newRecaudacion.addChoferes(dbChoferes);
         res.status(200).json(newRecaudacion);
         }

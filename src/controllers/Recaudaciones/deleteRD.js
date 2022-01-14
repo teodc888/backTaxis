@@ -2,7 +2,7 @@ const {Recaudaciones} = require("../../db.js");
 
 async function deleteRD(req, res, next) {
     try{
-        const {id} = req.body;
+        const {id} = req.query;
         const deleteRecaudacion = await Recaudaciones.destroy({
             where: {
                 id: id
